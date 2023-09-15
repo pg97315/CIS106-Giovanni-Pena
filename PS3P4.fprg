@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="giova"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-14 08:32:14 PM"/>
+        <attribute name="created" value="Z2lvdmE7R0lPREVMTDsyMDIzLTA5LTE0OzA4OjI5OjM5IFBNOzIzNDI="/>
+        <attribute name="edited" value="Z2lvdmE7R0lPREVMTDsyMDIzLTA5LTE0OzA4OjMyOjE0IFBNOzE7MjQzNw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="name" type="String" array="False" size=""/>
+            <output expression="&quot;Enter your first name: &quot;" newline="True"/>
+            <input variable="name"/>
+            <declare name="steps" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter the number of steps: &quot;" newline="True"/>
+            <input variable="steps"/>
+            <output expression="name &amp; &quot; you burned &quot; &amp; steps * .25 &amp; &quot; calories today. &quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

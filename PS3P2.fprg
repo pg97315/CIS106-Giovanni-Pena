@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="giova"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-14 08:20:42 PM"/>
+        <attribute name="created" value="Z2lvdmE7R0lPREVMTDsyMDIzLTA5LTE0OzA4OjA0OjI4IFBNOzIzMzM="/>
+        <attribute name="edited" value="Z2lvdmE7R0lPREVMTDsyMDIzLTA5LTE0OzA4OjIwOjQyIFBNOzE7MjQzNQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="purchasePrice" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter the original price of the shares: &quot;" newline="True"/>
+            <input variable="purchasePrice"/>
+            <declare name="currentPrice" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter the actual price of the shares: &quot;" newline="True"/>
+            <input variable="currentPrice"/>
+            <declare name="quantity" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter the amount of shares you have: &quot;" newline="True"/>
+            <input variable="quantity"/>
+            <declare name="finalPrice" type="Real" array="False" size=""/>
+            <assign variable="finalPrice" expression="currentPrice - purchasePrice"/>
+            <if expression="finalPrice &gt; 0">
+                <then>
+                    <output expression="&quot;You have earned: $&quot; &amp; finalPrice * quantity" newline="True"/>
+                    <output expression="&quot;Your shares increase a: &quot; &amp; (finalPrice/purchasePrice)*100 &amp; &quot;%&quot;" newline="True"/>
+                </then>
+                <else>
+                    <declare name="negativePercent" type="Real" array="False" size=""/>
+                    <assign variable="negativePercent" expression="(finalPrice / purchasePrice)*100"/>
+                    <output expression="&quot;You have lost: $&quot; &amp; (finalPrice * quantity) * -1" newline="True"/>
+                    <output expression="&quot;Your shares decrease a:&quot; &amp; negativePercent * -1 &amp; &quot;%&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
