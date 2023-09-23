@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="giova"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-22 10:26:16 PM"/>
+        <attribute name="created" value="Z2lvdmE7R0lPREVMTDsyMDIzLTA5LTIyOzEwOjE3OjMyIFBNOzIzMjQ="/>
+        <attribute name="edited" value="Z2lvdmE7R0lPREVMTDsyMDIzLTA5LTIyOzEwOjI2OjE2IFBNOzE7MjQzNA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="name" type="String" array="False" size=""/>
+            <declare name="depends" type="Integer" array="False" size=""/>
+            <declare name="grossIncome" type="Real" array="False" size=""/>
+            <declare name="AGI" type="Real" array="False" size=""/>
+            <declare name="incomeTax" type="Integer" array="False" size=""/>
+            <output expression="&quot;enter name&quot;" newline="True"/>
+            <input variable="name"/>
+            <output expression="&quot;enter dependents&quot;" newline="True"/>
+            <input variable="depends"/>
+            <output expression="&quot;enter gross income&quot;" newline="True"/>
+            <input variable="grossIncome"/>
+            <assign variable="AGI" expression="grossIncome - (depends * 12000)"/>
+            <if expression="AGI &lt;= 50000">
+                <then>
+                    <assign variable="incomeTax" expression="AGI * 0.1"/>
+                    <if expression="incomeTax &lt; 100">
+                        <then>
+                            <assign variable="incomeTax" expression="100"/>
+                        </then>
+                        <else/>
+                    </if>
+                </then>
+                <else>
+                    <assign variable="incomeTax" expression="(AGI - 50000) * 0.2 +5000"/>
+                </else>
+            </if>
+            <output expression="name &amp; &quot; your gross income is &quot; &amp; grossIncome &amp; &quot;. With &quot; &amp; depends &amp; &quot;dependents, your AGI is &quot; &amp; AGI &amp; &quot; your income tax is: &quot; &amp; incomeTax" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
