@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="giova"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-10-01 09:52:31 PM"/>
+        <attribute name="created" value="Z2lvdmE7R0lPREVMTDsyMDIzLTEwLTAxOzA5OjQ1OjUzIFBNOzIzMjU="/>
+        <attribute name="edited" value="Z2lvdmE7R0lPREVMTDsyMDIzLTEwLTAxOzA5OjUyOjMxIFBNOzE7MjQyNw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="quantity" type="Integer" array="False" size=""/>
+            <declare name="price" type="Integer" array="False" size=""/>
+            <output expression="&quot;enter quantity&quot;" newline="True"/>
+            <input variable="quantity"/>
+            <if expression="quantity &gt;= 25">
+                <then>
+                    <assign variable="price" expression="50"/>
+                </then>
+                <else>
+                    <if expression="quantity &gt; 10">
+                        <then>
+                            <assign variable="price" expression="60"/>
+                        </then>
+                        <else>
+                            <if expression="quantity &gt; 5">
+                                <then>
+                                    <assign variable="price" expression="70"/>
+                                </then>
+                                <else>
+                                    <assign variable="price" expression="75"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;Quantity: &quot; &amp; quantity &amp; &#13;&#10;&quot; Price: &quot; &amp; price &amp;&#13;&#10;&quot; Total: $&quot; &amp; quantity * price" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
