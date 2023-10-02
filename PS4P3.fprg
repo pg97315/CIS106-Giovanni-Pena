@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="giova"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-22 09:44:45 PM"/>
+        <attribute name="created" value="Z2lvdmE7R0lPREVMTDsyMDIzLTA5LTIyOzA5OjMzOjE2IFBNOzIzMzI="/>
+        <attribute name="edited" value="Z2lvdmE7R0lPREVMTDsyMDIzLTA5LTIyOzA5OjQ0OjQ1IFBNOzE7MjQ0NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="price" type="Integer" array="False" size=""/>
+            <declare name="quantity" type="Integer" array="False" size=""/>
+            <declare name="toal" type="Integer" array="False" size=""/>
+            <declare name="total" type="Integer" array="False" size=""/>
+            <declare name="ship" type="Integer" array="False" size=""/>
+            <output expression="&quot;enter price of the book&quot;" newline="True"/>
+            <input variable="price"/>
+            <output expression="&quot;enter quantity&quot;" newline="True"/>
+            <input variable="quantity"/>
+            <assign variable="total" expression="price * quantity"/>
+            <if expression="total &gt; 50">
+                <then>
+                    <assign variable="ship" expression="0"/>
+                    <output expression="&quot;your total is: $&quot; &amp; total &amp; &quot; with free shipping&quot;" newline="True"/>
+                </then>
+                <else>
+                    <assign variable="ship" expression="25"/>
+                    <output expression="&quot;your total is: $&quot; &amp; total + ship &amp; &quot; with $25 of shipping&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
