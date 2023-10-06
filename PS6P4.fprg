@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="giova"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-10-05 07:45:14 PM"/>
+        <attribute name="created" value="Z2lvdmE7R0lPREVMTDsyMDIzLTEwLTA1OzA3OjIyOjMwIFBNOzIzMTc="/>
+        <attribute name="edited" value="Z2lvdmE7R0lPREVMTDsyMDIzLTEwLTA1OzA3OjQ1OjE0IFBNOzE7MjQzMg=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="count" type="Integer" array="False" size=""/>
+            <assign variable="count" expression="0"/>
+            <declare name="payment" type="Integer" array="False" size=""/>
+            <declare name="agree" type="String" array="False" size=""/>
+            <declare name="name" type="String" array="False" size=""/>
+            <declare name="hour" type="Real" array="False" size=""/>
+            <declare name="rate" type="Real" array="False" size=""/>
+            <declare name="grossPay" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <declare name="average" type="Real" array="False" size=""/>
+            <assign variable="total" expression="0"/>
+            <output expression="&quot;do you want to run this program? &quot;" newline="True"/>
+            <input variable="agree"/>
+            <while expression="agree = &quot;yes&quot;">
+                <output expression="&quot;enter name&quot;" newline="True"/>
+                <input variable="name"/>
+                <output expression="&quot;enter hours worked&quot;" newline="True"/>
+                <input variable="hour"/>
+                <output expression="&quot;enter pay rate&quot;" newline="True"/>
+                <input variable="rate"/>
+                <assign variable="count" expression="count + 1"/>
+                <if expression="hour &lt;= 40">
+                    <then>
+                        <assign variable="grossPay" expression="hour * rate"/>
+                    </then>
+                    <else>
+                        <assign variable="grossPay" expression="((hour - 40 ) * (rate * 1.5)) + (40 * rate)"/>
+                    </else>
+                </if>
+                <assign variable="total" expression="total + grossPay"/>
+                <output expression="name &amp; &quot; your payment is: &quot; &amp; grossPay" newline="True"/>
+                <output expression="&quot;try again?&quot;" newline="True"/>
+                <input variable="agree"/>
+            </while>
+            <assign variable="average" expression="total / count"/>
+            <output expression="&quot;Users: &quot; &amp; count &amp;&#13;&#10;&quot; Total gross payment: &quot; &amp; total &amp;&#13;&#10;&quot; Average earned: &quot; &amp; average" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

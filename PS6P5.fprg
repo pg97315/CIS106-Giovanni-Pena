@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="giova"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-10-05 08:07:40 PM"/>
+        <attribute name="created" value="Z2lvdmE7R0lPREVMTDsyMDIzLTEwLTA1OzA3OjQ1OjE2IFBNOzIzMjY="/>
+        <attribute name="edited" value="Z2lvdmE7R0lPREVMTDsyMDIzLTEwLTA1OzA4OjA3OjQwIFBNOzE7MjQzMA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="discount" type="Integer" array="False" size=""/>
+            <declare name="savings" type="Integer" array="False" size=""/>
+            <declare name="sumS" type="Integer" array="False" size=""/>
+            <assign variable="sumS" expression="0"/>
+            <declare name="agree" type="String" array="False" size=""/>
+            <declare name="quantity" type="Integer" array="False" size=""/>
+            <declare name="price" type="Integer" array="False" size=""/>
+            <declare name="extendedPrice" type="Integer" array="False" size=""/>
+            <declare name="discountPrice" type="Integer" array="False" size=""/>
+            <output expression="&quot;do you want to run this program? &quot;" newline="True"/>
+            <input variable="agree"/>
+            <while expression="agree = &quot;yes&quot;">
+                <output expression="&quot;enter quantity&quot;" newline="True"/>
+                <input variable="quantity"/>
+                <output expression="&quot;enter price&quot;" newline="True"/>
+                <input variable="price"/>
+                <assign variable="extendedPrice" expression="price * quantity"/>
+                <if expression="extendedPrice &gt; 10000">
+                    <then>
+                        <assign variable="discount" expression="25"/>
+                    </then>
+                    <else>
+                        <assign variable="discount" expression="10"/>
+                    </else>
+                </if>
+                <assign variable="savings" expression="price * (discount / 100)"/>
+                <assign variable="discountPrice" expression="price - savings"/>
+                <output expression="&quot;original price: &quot; &amp; price * quantity &amp; &#13;&#10;&quot; discount: &quot; &amp; savings * quantity &amp;&#13;&#10;&quot; Total: $&quot; &amp; discountPrice * quantity" newline="True"/>
+                <assign variable="sumS" expression="savings * quantity + sumS"/>
+                <output expression="&quot;try again?&quot;" newline="True"/>
+                <input variable="agree"/>
+            </while>
+            <output expression="&quot;Total savings: $&quot; &amp; sumS" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
