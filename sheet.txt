@@ -1,0 +1,5 @@
+Charger block, 15, 20
+Cable USB-C, 25, 10
+Digital-Pen, 7, 30
+Case, 3, 10
+Glass screen, 6, 15
