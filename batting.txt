@@ -1,0 +1,10 @@
+Cabrera , 0.321
+Altuve , 0.199
+Acuna , 0.221
+Perez , 0.293
+Rodriguez , 0.283
+Contreras , 0.276
+Diaz , 0.202
+Torres , 0.254
+Rojas , 0.215
+Castillo , 0.291
